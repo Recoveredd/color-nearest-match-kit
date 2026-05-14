@@ -178,6 +178,14 @@ function compilePalette(palette: readonly PaletteEntry[]): ColorResult<readonly 
   const entries: CompiledEntry[] = [];
 
   for (const entry of palette) {
+    if (!isPaletteEntryLike(entry)) {
+      return {
+        ok: false,
+        error: "invalid-palette-entry",
+        message: "Palette entries must be objects with a non-empty name and color value."
+      };
+    }
+
     if (typeof entry.name !== "string" || entry.name.trim() === "") {
       return {
         ok: false,
@@ -288,6 +296,10 @@ function isChannel(value: number): boolean {
 
 function isRgbLike(input: unknown): input is RgbColor {
   return typeof input === "object" && input !== null && "r" in input && "g" in input && "b" in input;
+}
+
+function isPaletteEntryLike(input: unknown): input is PaletteEntry {
+  return typeof input === "object" && input !== null && "name" in input && "value" in input;
 }
 
 function channelToHex(value: number): string {

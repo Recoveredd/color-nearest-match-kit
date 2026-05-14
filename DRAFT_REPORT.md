@@ -2,7 +2,7 @@
 
 ## Verdict
 
-GO local plus tard. Le candidat reste spécialisé, mais il a maintenant les garanties minimales attendues pour un outil UI: deux passes utilisateur avancé, diagnostics runtime plus solides et smoke `dist` validé.
+Promu en vraie librairie le 2026-05-14. Le candidat reste spécialisé, mais il a maintenant les garanties minimales attendues pour un outil UI: deux passes utilisateur avancé, diagnostics runtime plus solides, CI, README public, smoke `dist` et preview portfolio.
 
 ## Candidat source
 

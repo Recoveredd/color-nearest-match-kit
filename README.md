@@ -1,8 +1,24 @@
 # color-nearest-match-kit
 
+[![License: MPL-2.0](https://img.shields.io/badge/license-MPL--2.0-blue.svg)](LICENSE)
+[![CI](https://github.com/Recoveredd/color-nearest-match-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/Recoveredd/color-nearest-match-kit/actions/workflows/ci.yml)
+
 Small browser-friendly TypeScript toolkit for matching one color against a named palette.
 
 It is designed for UI tools, design token checks, dashboards, and import flows where callers need a stable nearest color result without Node-only APIs or runtime dependencies.
+
+## Demo
+
+Try the browser preview: [packages.wasta-wocket.fr/color-nearest-match-kit](https://packages.wasta-wocket.fr/color-nearest-match-kit/).
+
+## Package quality
+
+- TypeScript types are generated from the source.
+- ESM-only package with no runtime dependencies.
+- Marked as side-effect free for bundlers.
+- CI runs `npm ci`, `typecheck`, `build`, and `test`.
+- Tested on Node.js 20 and 22 with GitHub Actions.
+- Browser-friendly implementation with no Node-only APIs.
 
 ## Install
 
@@ -51,6 +67,7 @@ const result = matcher.match("#101010");
 ```
 
 Runtime-invalid RGB objects and invalid distance options return `{ ok: false, error, message }` instead of throwing, which keeps UI import flows easy to diagnose.
+Runtime-invalid palette entries also return `invalid-palette-entry`.
 
 ### `matcher.rank(input, options?)`
 

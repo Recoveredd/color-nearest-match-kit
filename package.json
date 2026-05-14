@@ -6,6 +6,14 @@
   "sideEffects": false,
   "license": "MPL-2.0",
   "author": "Recoveredd",
+  "keywords": [
+    "color",
+    "palette",
+    "nearest-color",
+    "design-tokens",
+    "typescript",
+    "browser"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Recoveredd/color-nearest-match-kit.git"

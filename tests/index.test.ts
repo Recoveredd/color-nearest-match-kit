@@ -79,6 +79,10 @@ describe("createColorMatcher", () => {
       ok: false,
       error: "invalid-palette-entry"
     });
+    expect(createColorMatcher([null] as unknown as typeof palette).match("#ffffff")).toMatchObject({
+      ok: false,
+      error: "invalid-palette-entry"
+    });
     expect(createColorMatcher([{ name: "", value: "#fff" }]).match("#ffffff")).toMatchObject({
       ok: false,
       error: "invalid-palette-entry"
